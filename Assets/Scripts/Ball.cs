@@ -12,6 +12,8 @@ public class Ball : MonoBehaviour
     private CircleCollider2D circleCollider;
 
     private Vector2 movement;
+    private Vector3 mousePosition;
+    private Vector2 direction;
 
     public string SCENE_NAME;
 
@@ -77,6 +79,12 @@ public class Ball : MonoBehaviour
             case "Problem 4":
                 Move(h, v);
                 break;
+            case "Problem 5":
+                if (Input.GetMouseButton(0))
+                {
+                    MoveWithCursor();
+                }                
+                break;
         }
     }
 
@@ -90,5 +98,12 @@ public class Ball : MonoBehaviour
 
         //Move to position
         rigidbody2D.MovePosition(rigidbody2D.position + movement);
+    }
+
+    private void MoveWithCursor()
+    {
+        mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        direction = (mousePosition - transform.position).normalized;
+        rigidbody2D.velocity = new Vector2(direction.x * speed, direction.y * speed);
     }
 }

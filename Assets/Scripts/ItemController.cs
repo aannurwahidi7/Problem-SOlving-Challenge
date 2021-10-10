@@ -9,17 +9,17 @@ public class ItemController : MonoBehaviour
 
     private float x;
     private float y;
+    private int sizeItem = 0;
+    private const int MAX_ITEM = 6;
+
+    [SerializeField]
+    MonoBehaviour factory;
+    IFactory Factory { get { return factory as IFactory; } }
 
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("Spawn", 3);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        InvokeRepeating("Spawn", 3, 3);
     }
 
     private void Spawn()
@@ -27,18 +27,32 @@ public class ItemController : MonoBehaviour
         int randomItem;
         GameObject item;
         Vector2 position;
-        size = Random.Range(1, 7);
+        size = Random.Range(0, 7);
 
-        for(int i = 0; i < size; i++)
+        if(sizeItem < 7)
         {
-            randomItem = Random.Range(0, spawnPool.Count);
-            item = spawnPool[randomItem];
+            Factory.FactoryMethod(size);
+        }
 
-            x = Random.Range(-7.5f, 6.5f);
-            y = Random.Range(-3f, 3.6f);
-            position = new Vector2(x, y);
+        else if(sizeItem == 0)
+        {
+            for (int i = 0; i < size; i++)
+            {
+                sizeItem += 1;
+                randomItem = Random.Range(0, spawnPool.Count);
+                item = spawnPool[randomItem];
 
-            Instantiate(item, position, item.transform.rotation);
-        }               
+                x = Random.Range(-5.8f, 6.3f);
+                y = Random.Range(-3f, 3.6f);
+                position = new Vector2(x, y);
+
+                Instantiate(item, position, item.transform.rotation);
+            }
+        }
+        
+        else
+        {
+            return;
+        }
     }
 }

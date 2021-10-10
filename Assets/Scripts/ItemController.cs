@@ -6,10 +6,10 @@ public class ItemController : MonoBehaviour
 {
     private int size;
     public List<GameObject> spawnPool;
+    public static int sizeItem = 0;
 
     private float x;
-    private float y;
-    private int sizeItem = 0;
+    private float y;    
     private const int MAX_ITEM = 6;
 
     [SerializeField]
@@ -28,15 +28,16 @@ public class ItemController : MonoBehaviour
         GameObject item;
         Vector2 position;
         size = Random.Range(0, 7);
+        int sizePool = Random.Range(1, 7);
 
-        if(sizeItem < 7)
+        if(sizeItem == 0)
         {
             Factory.FactoryMethod(size);
         }
 
-        else if(sizeItem == 0)
+        else if(sizeItem < 7)
         {
-            for (int i = 0; i < size; i++)
+            for (int i = 0; i < sizePool; i++)
             {
                 sizeItem += 1;
                 randomItem = Random.Range(0, spawnPool.Count);

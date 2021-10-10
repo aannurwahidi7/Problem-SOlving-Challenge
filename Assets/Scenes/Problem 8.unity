@@ -450,6 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 672989867}
   - component: {fileID: 672989869}
+  - component: {fileID: 672989868}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -471,6 +472,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &672989868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 672989866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5389fe34e34f5c745888bb1844c8a720, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefab:
+  - {fileID: 2280946064496379679, guid: 6ea853ea02ad9c54a92973ce9c3c0583, type: 3}
+  - {fileID: 2280946064496379679, guid: b0aec7eac08fd184081e4afcc5af1199, type: 3}
+  - {fileID: 2280946064496379679, guid: 69c33f181a3939b46a1024391de80da7, type: 3}
+  - {fileID: 2280946064496379679, guid: 2daee2433cb55524a9a78c2899e4290d, type: 3}
+  - {fileID: 2280946064496379679, guid: 956baefc6e55d1c43b5a0b64f397cab6, type: 3}
+  - {fileID: 2280946064496379679, guid: bd28bffb974c127469d7c490e88298fd, type: 3}
+  ball: {fileID: 830639696}
 --- !u!114 &672989869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -480,7 +501,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 672989866}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5474b9bba4ec44fa5f4b5d06eabead, type: 3}
+  m_Script: {fileID: 11500000, guid: 67e500cde8c1f5545805ce02dd233ecb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPool:
@@ -490,6 +511,7 @@ MonoBehaviour:
   - {fileID: 2280946064496379679, guid: 2daee2433cb55524a9a78c2899e4290d, type: 3}
   - {fileID: 2280946064496379679, guid: 956baefc6e55d1c43b5a0b64f397cab6, type: 3}
   - {fileID: 2280946064496379679, guid: bd28bffb974c127469d7c490e88298fd, type: 3}
+  factory: {fileID: 672989868}
 --- !u!1 &734061776
 GameObject:
   m_ObjectHideFlags: 0

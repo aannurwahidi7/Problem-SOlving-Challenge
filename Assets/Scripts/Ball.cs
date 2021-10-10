@@ -78,8 +78,10 @@ public class Ball : MonoBehaviour
             case "Problem 4":
                 Move(h, v);
                 break;
-            case "Problem 5": case "Problem 6":
+            case "Problem 5":
+            case "Problem 6":
             case "Problem 7":
+            case "Problem 8":
                 if (Input.GetMouseButton(0))
                 {
                     MoveWithCursor();

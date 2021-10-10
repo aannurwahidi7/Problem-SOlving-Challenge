@@ -18,5 +18,6 @@ public class Item : MonoBehaviour
     {
         ScoreManager.score += scoreValue;
         Destroy(gameObject);
+        ItemController.sizeItem -= 1;
     }
 }

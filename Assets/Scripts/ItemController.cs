@@ -32,11 +32,6 @@ public class ItemController : MonoBehaviour
 
         if(sizeItem == 0)
         {
-            Factory.FactoryMethod(size);
-        }
-
-        else if(sizeItem < 7)
-        {
             for (int i = 0; i < sizePool; i++)
             {
                 sizeItem += 1;
@@ -48,7 +43,12 @@ public class ItemController : MonoBehaviour
                 position = new Vector2(x, y);
 
                 Instantiate(item, position, item.transform.rotation);
-            }
+            }            
+        }
+
+        else if(sizeItem < 7)
+        {
+            Factory.FactoryMethod(size);
         }
         
         else

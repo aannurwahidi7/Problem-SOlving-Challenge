@@ -19,7 +19,7 @@ public class ItemFactory : MonoBehaviour, IFactory
         ballPosition = ball.transform.position;
         GameObject item = Instantiate(itemPrefab[tag]);
 
-        if((item.transform.position - ballPosition).magnitude < 1.1)
+        if((item.transform.position - ballPosition).magnitude < 2.1)
         {
             RandomPosition(x, y);
             item.transform.position = position;

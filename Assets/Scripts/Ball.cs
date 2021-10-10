@@ -30,7 +30,6 @@ public class Ball : MonoBehaviour
 
         if(SCENE_NAME == "Problem 2" || SCENE_NAME == "Problem 3")
         {
-            rigidbody2D.bodyType = RigidbodyType2D.Dynamic;
             BallControl();
         }
         
@@ -80,6 +79,7 @@ public class Ball : MonoBehaviour
                 Move(h, v);
                 break;
             case "Problem 5": case "Problem 6":
+            case "Problem 7":
                 if (Input.GetMouseButton(0))
                 {
                     MoveWithCursor();
